@@ -1,0 +1,55 @@
+﻿<Window x:Class="HeroTowerDefense.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HeroTowerDefense"
+        mc:Ignorable="d"
+        Title="Hero Tower Defense" Height="640" Width="758" Background="Black" Closing="Window_Closing">
+    <Canvas Name="mapCanvas" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="Auto" MouseMove="MouseMoved" MouseLeftButtonDown="MouseLeftClick" MouseRightButtonDown="MouseRightClick">
+        <Image x:Name="background" Height="600" Source="Assets/map.png" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Image x:Name="menuicon" Source="Assets/icon.png" Height="125" Width="125" Margin="608,0,0,0"/>
+        <Button Name="archerbutton" Background="Transparent" BorderBrush="Transparent" Click="ArcherTowerButton" Height="100" Margin="622,150,0,0">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <ContentPresenter Content="{TemplateBinding Content}"/>
+                </ControlTemplate>
+            </Button.Template>
+            <Image Name="archerimage" Source="Assets/archertower.png"/>
+        </Button>
+        <Button Name="darkwizardtowerbutton" Background="Transparent" BorderBrush="Transparent" Click="DarkWizardTowerButton" Height="100" Margin="622,275,0,0">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <ContentPresenter Content="{TemplateBinding Content}"/>
+                </ControlTemplate>
+            </Button.Template>
+            <Image Name="darktowerimage" Source="Assets/darkwizardtower.png"/>
+        </Button>
+        <Button Name="cannontowerbutton" Background="Transparent" BorderBrush="Transparent" Click="CannonTowerButton" Height="100" Margin="622,400,0,0">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <ContentPresenter Content="{TemplateBinding Content}"/>
+                </ControlTemplate>
+            </Button.Template>
+            <Image Name="cannontowerimage" Source="Assets/cannontower.png"/>
+        </Button>
+        <TextBox x:Name="moneyBox" Text="" TextAlignment="Center" Height="65" Canvas.Left="601" Canvas.Top="535" Width="140" IsReadOnly="True" FontSize="45" Background="Gold"/>
+        <Label x:Name="health" Content="" Canvas.Left="522" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="37"/>
+        <Rectangle x:Name="EnemySpawn" Fill="Transparent" Height="20" Width="10" Canvas.Left="0" Canvas.Top="50"/>
+        <Rectangle x:Name="TurnOne" Fill="Transparent" Height="20" Width="20" Canvas.Left="35" Canvas.Top="50"/>
+        <Rectangle x:Name="TurnTwo" Fill="Transparent" Height="20" Width="20" Canvas.Left="35" Canvas.Top="558"/>
+        <Rectangle x:Name="TurnThree" Fill="Transparent" Height="20" Width="20" Canvas.Left="530" Canvas.Top="558"/>
+        <Rectangle x:Name="End" Fill="Transparent" Height="20" Width="20" Canvas.Left="530" Canvas.Top="50"/>
+        <Rectangle x:Name="Castle" Fill="Transparent" Height="70" Canvas.Left="478" Width="122"/>
+
+        <Rectangle x:Name="PathOne" Fill="Transparent" Height="1" Canvas.Left="0" Canvas.Top="58" Width="45"/>
+        <Rectangle x:Name="PathTwo" Fill="Transparent" Height="510" Canvas.Left="45" Canvas.Top="56" Width="1"/>
+        <Rectangle x:Name="PathThree" Fill="Transparent" Height="1" Canvas.Left="45" Canvas.Top="568" Width="495"/>
+        <Rectangle x:Name="PathFour" Fill="Transparent" Height="508" Canvas.Left="540" Canvas.Top="60" Width="1"/>
+        <Button x:Name="waveButton" Content="Start Wave" Canvas.Left="200" Canvas.Top="545" Width="200" Height="50" Click="WaveButton" BorderBrush="Purple" FontSize="30" FontStyle="Italic" Foreground="Purple" Background="Black"/>
+        <Label x:Name="waveNumber" Content="0" Canvas.Left="657" Canvas.Top="100" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Black" Background="Purple" Width="30"/>
+        <Label x:Name="archerCostLabel" Content="Cost: 0" Canvas.Left="633" Canvas.Top="248" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Black" Background="Purple" Width="80" Height="25" FontSize="12"/>
+        <Label x:Name="darkWizardCostLabel" Content="Cost: 0" Canvas.Left="633" Canvas.Top="378" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Black" Background="Purple" Width="80" Height="25" FontSize="12"/>
+        <Label x:Name="cannonCostLabel" Content="Cost: 0" Canvas.Left="633" Canvas.Top="502" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Black" Background="Purple" Width="80" Height="25" FontSize="12"/>
+    </Canvas>
+</Window>
